@@ -1,108 +1,80 @@
 # Apurador de XML de NF-e / NFC-e
 
-Aplicação desktop em Python que lê XMLs de Notas Fiscais Eletrônicas (NF-e modelo 55 e
-NFC-e modelo 65), exibe um resumo por situação e **apura os impostos** (ICMS, ICMS-ST,
-FCP, IPI, PIS, COFINS, Frete, Desconto, Total de Tributos e os campos da Reforma
-Tributária **IBS/CBS**), exportando tudo para uma planilha Excel formatada.
+Programa para Windows que lê os XMLs das suas notas fiscais eletrônicas
+(NF-e e NFC-e), mostra um resumo organizado e **calcula os impostos** de
+cada documento (ICMS, ICMS-ST, FCP, IPI, PIS, COFINS, frete, desconto,
+Total de Tributos e os novos IBS/CBS da Reforma Tributária). Tudo pode ser
+exportado para uma planilha Excel pronta para uso.
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+Não precisa instalar nada nem ter conhecimento técnico: basta baixar o
+programa, abrir e apontar para a pasta onde estão seus XMLs.
 
-## Funcionalidades
+## Como baixar a versão pronta
 
-- **Leitura recursiva** de pastas com arquivos `.xml` e `.zip` (extrai os XMLs internos).
-- **Situações reconhecidas**: Autorizada, Rejeitada, Denegada, Cancelada, Sem protocolo,
-  Inutilizada, Cancelamento, Evento CC-e, Evento e Inválida.
-- **Apuração completa de impostos** agregada de todos os documentos:
-  - Tradicionais: BC ICMS, ICMS, ICMS Desonerado, FCP, BC ICMS-ST, ICMS-ST, FCP-ST,
-    FCP-ST Retido, Produtos, Frete, Seguro, Desconto, Imposto de Importação, IPI,
-    IPI Devolvido, PIS, COFINS, Outras Despesas e Total de Tributos.
-  - **Reforma Tributária (NT 2025.002)**: BC IBS/CBS, IBS UF, IBS Município, IBS Total,
-    Crédito Presumido IBS, CBS, Crédito Presumido CBS, IBS/CBS Monofásico e suas
-    retenções, além do Total NF (`vNFTot`).
-- **Deduplicação** automática por chave de acesso (mantém o melhor status).
-- **FCP no total** opcional.
-- **Interface em abas**: Resumo (cartões + chips por situação + apuração recolhível) e
-  Documentos (tabela com todas as colunas de impostos e scroll).
-- **Exportação XLSX** com formatação profissional (cabeçalho azul, linhas alternadas,
-  bordas, filtro, congelamento e moeda `R$ #,##0.00`) e seção de apuração por imposto.
-- **Build nativo com Nuitka** (EXE único, leve e rápido, sem janela de console).
+1. Acesse a página de versões do projeto:
+   **https://github.com/otofiles/apurador-xml/releases**
+2. Na primeira versão (ex.: **v1.0.0**), clique no arquivo
+   **`CalculadoraXml.exe`** para baixá-lo.
+3. Salve o arquivo em qualquer pasta do seu computador (ex.: Área de
+   Trabalho ou Documentos).
 
-## Pré-requisitos
+> O programa é um único arquivo (sem instalação). Funciona offline, sem
+> internet.
 
-- Windows
-- Python 3.10+ (para rodar via código-fonte)
+## Tutorial de uso (para o usuário comum)
 
-## Como usar (código-fonte)
+Siga estes passos:
 
-1. Instale as dependências:
-   ```bat
-   instalar.bat
-   ```
-2. Rode a aplicação:
-   ```bat
-   iniciar.bat
-   ```
-   Ou diretamente:
-   ```bat
-   python CalculadoraXml.py
-   ```
+1. **Abra o programa** — dê um duplo clique no `CalculadoraXml.exe` que
+   você baixou. O aplicativo aparecerá em alguns segundos.
+   - *Obs.:* o Windows pode mostrar um aviso de "editor desconhecido".
+     Isso é normal em programas sem assinatura paga. Como o código é aberto,
+     você pode usar com segurança. Clique em "Executar mesmo assim" /
+     "Mais informações → Executar assim mesmo".
 
-## Como gerar o executável (EXE)
+2. **Escolha a pasta das notas** — clique no botão **"Selecionar pasta"**
+   e aponte para a pasta que contém seus arquivos XML.
+   - A pasta pode conter subpastas e arquivos `.zip` (o programa abre os
+     XMLs dentro dos zips automaticamente).
 
-Recomendado — **Nuitka** (nativo, ~26 MB, inicialização rápida, sem console):
+3. **Aguarde o processamento** — o programa lê todos os XMLs, remove
+   duplicados e classifica cada nota por situação (Autorizada, Cancelada,
+   Denegada, Rejeitada, Inutilizada, Carta de Correção etc.).
 
-```bat
-pip install "nuitka[onefile]"
-criar_exe_nuitka.bat
-```
+4. **Veja o resultado** — na aba **Resumo** você encontra:
+   - Cartões com totais (Quantidade de documentos, Valor total, Total de
+     impostos e Total de tributos);
+   - Um “chip” para cada situação, com a contagem e o valor;
+   - A **Apuração de Impostos**, com o valor somado de cada imposto de
+     todos os documentos.
 
-Opcional — PyInstaller:
+5. **Veja documento a documento** — na aba **Documentos** há uma tabela
+   com cada nota e todas as colunas de impostos. Use a caixa
+   **“Mostrar colunas de impostos na tabela”** se quiser ver essas colunas.
 
-```bat
-pip install pyinstaller openpyxl
-pyinstaller --noconfirm --clean CalculadoraXml.spec
-```
+6. **Exporte para Excel** — clique em **“Exportar XLSX”**, escolha onde
+   salvar e pronto. A planilha vem formatada (cabeçalho azul, valores em
+   reais `R$`, filtros e congelamento) e já inclui a aba de apuração de
+   impostos.
+   - Se quiser a planilha no formato simples (apenas as colunas básicas),
+     desmarque a opção **“Exportar colunas de impostos”** antes de exportar.
 
-## Estrutura do projeto
+## Dicas e perguntas frequentes
 
-```
-Calculadora de XML FINAL/
-├── CalculadoraXml.py        # Interface (CustomTkinter, abas, exportação XLSX)
-├── nfe_parser.py            # Parser dos XMLs e agregação de impostos
-├── CalculadoraXml.spec      # Configuração PyInstaller
-├── requirements.txt         # Dependências
-├── criar_exe.bat            # Build PyInstaller
-├── criar_exe_nuitka.bat     # Build Nuitka (recomendado)
-├── iniciar.bat              # Roda via Python
-├── instalar.bat             # Instala dependências
-├── xml.ico                  # Ícone do aplicativo
-├── Exemplos/                # XMLs de exemplo para teste
-├── contexto.md              # Documentação técnica do projeto
-├── README.md
-├── LICENSE
-└── .gitignore
-```
-
-## Campos apurados (resumo)
-
-| Grupo | Campos |
-|-------|-------|
-| ICMS | BC ICMS, ICMS, ICMS Desonerado, BC ICMS-ST, ICMS-ST, FCP, FCP-ST, FCP-ST Retido |
-| Outros | Produtos, Frete, Seguro, Desconto, Imp. Importação, IPI, IPI Devolvido, PIS, COFINS, Outras, Total Tributos |
-| Reforma Tributária | BC IBS/CBS, IBS UF, IBS Município, IBS Total, Crédito Presumido IBS, CBS, Crédito Presumido CBS, IBS/CBS Monofásico e retenções, Total NF |
-
-## Como atualizar o projeto
-
-1. Faça as alterações desejadas nos arquivos.
-2. (Opcional) Regenere o EXE com `criar_exe_nuitka.bat`.
-3. Versione e envie ao GitHub:
-   ```bat
-   git add .
-   git commit -m "Descrição da alteração"
-   git push
-   ```
+- **Posso processar muitos arquivos de uma vez?** Sim. Quanto mais XMLs,
+  mais tempo leva, mas o programa faz o trabalho em paralelo para ser rápido.
+- **Ele altera meus XMLs?** Não. O programa apenas lê os arquivos; nada é
+  modificado ou enviado para lugar nenhum.
+- **O Windows diz que o arquivo é suspeito.** É só o aviso padrão de
+  arquivos sem certificado. O projeto é de código aberto e pode ser
+  inspecionado no repositório.
+- **Funciona em outro Windows?** Sim, basta copiar o `CalculadoraXml.exe`
+  para o outro computador.
+- **E se eu só quiser a apuração de impostos?** Marque a opção de mostrar
+  as colunas de impostos e exporte com a apuração — a planilha trará tudo
+  consolidado.
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT — veja o arquivo [LICENSE](LICENSE).
+Este programa é disponibilizado sob a Licença MIT (veja `LICENSE`).
+Você pode usá-lo livremente.
