@@ -31,3 +31,6 @@ Desktop.ini
 # Secrets (nunca versionar tokens)
 *.token
 gh_token*
+
+# Documentacao local (nao versionar; fica so na maquina)
+contexto.md
