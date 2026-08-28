@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<procNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <NFe>
+    <infNFe Id="NFe35200611111111000111550010000000011000000010" versao="4.00">
+      <ide>
+        <cUF>35</cUF>
+        <cNF>00000010</cNF>
+        <natOp>VENDA</natOp>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>10</nNF>
+        <dhEmi>2020-06-01T10:00:00-03:00</dhEmi>
+        <tpNF>1</tpNF>
+        <idDest>1</idDest>
+        <tpEmis>1</tpEmis>
+      </ide>
+      <emit>
+        <CNPJ>11111111000111</CNPJ>
+        <xNome>EMPRESA EXEMPLO LTDA</xNome>
+      </emit>
+      <dest>
+        <CNPJ>22222222000122</CNPJ>
+        <xNome>CLIENTE EXEMPLO LTDA</xNome>
+      </dest>
+      <total>
+        <ICMSTot>
+          <vBC>100.00</vBC>
+          <vICMS>18.00</vICMS>
+          <vNF>100.00</vNF>
+        </ICMSTot>
+      </total>
+    </infNFe>
+    <protNFe versao="4.00">
+      <infProt>
+        <tpAmb>1</tpAmb>
+        <verAplic>SP_NFE_PL009</verAplic>
+        <chNFe>35200611111111000111550010000000011000000010</chNFe>
+        <dhRecbto>2020-06-01T10:00:05-03:00</dhRecbto>
+        <nProt>135200000000001</nProt>
+        <digVal>B0D7F2CzBwMlyNFxMCH3M9Uz5Dk=</digVal>
+        <cStat>100</cStat>
+        <xMotivo>Autorizado o uso da NF-e</xMotivo>
+      </infProt>
+    </protNFe>
+  </NFe>
+  <procEventoNFe versao="1.00">
+    <evento versao="1.00">
+      <infEvento Id="ID1101113520061111111100011155001000000001100000001001">
+        <cOrgao>35</cOrgao>
+        <tpAmb>1</tpAmb>
+        <CNPJ>11111111000111</CNPJ>
+        <chNFe>35200611111111000111550010000000011000000010</chNFe>
+        <dhEvento>2020-06-02T09:00:00-03:00</dhEvento>
+        <tpEvento>110111</tpEvento>
+        <nSeqEvento>1</nSeqEvento>
+        <verEvento>1.00</verEvento>
+        <detEvento versao="1.00">
+          <descEvento>Cancelamento</descEvento>
+          <nProt>135200000000001</nProt>
+          <xJust>Cancelamento a pedido do cliente</xJust>
+        </detEvento>
+      </infEvento>
+    </evento>
+    <retEvento versao="1.00">
+      <infEvento>
+        <tpAmb>1</tpAmb>
+        <verAplic>SP_NFE_PL009</verAplic>
+        <cOrgao>35</cOrgao>
+        <cStat>135</cStat>
+        <xMotivo>Evento registrado e vinculado a NF-e</xMotivo>
+        <chNFe>35200611111111000111550010000000011000000010</chNFe>
+        <nProt>135200000000001</nProt>
+        <dhRegEvento>2020-06-02T09:00:10-03:00</dhRegEvento>
+        <nSeqEvento>1</nSeqEvento>
+      </infEvento>
+    </retEvento>
+  </procEventoNFe>
+</procNFe>

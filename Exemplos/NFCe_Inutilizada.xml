@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inutNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <infInut Id="ID136310220760123981000152654900001115999999999">
+    <tpAmb>1</tpAmb>
+    <cUF>31</cUF>
+    <ano>26</ano>
+    <CNPJ>01962381000152</CNPJ>
+    <mod>65</mod>
+    <serie>900</serie>
+    <nNFIni>999</nNFIni>
+    <nNFFin>999</nNFFin>
+    <xJust>Teste de inutilizacao</xJust>
+  </infInut>
+  <retInutNFe versao="4.00">
+    <infInut Id="ID136310220760123981000152654900001115999999999">
+      <tpAmb>1</tpAmb>
+      <verAplic>SVRS2019050228</verAplic>
+      <cStat>135</cStat>
+      <xMotivo>Inutilizacao de numero homologada</xMotivo>
+      <cUF>31</cUF>
+      <ano>26</ano>
+      <CNPJ>01962381000152</CNPJ>
+      <mod>65</mod>
+      <serie>900</serie>
+      <nNFIni>999</nNFIni>
+      <nNFFin>999</nNFFin>
+      <dhRecbto>2026-07-15T10:00:00-03:00</dhRecbto>
+      <nProt>131260000000001</nProt>
+    </infInut>
+  </retInutNFe>
+</inutNFe>

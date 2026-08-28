@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+  <infNFe Id="NFe35200611111111000111650010000000002000000020" versao="4.00">
+    <ide>
+      <cUF>35</cUF>
+      <cNF>00000020</cNF>
+      <natOp>VENDA</natOp>
+      <mod>65</mod>
+      <serie>1</serie>
+      <nNF>20</nNF>
+      <dhEmi>2020-06-01T11:00:00-03:00</dhEmi>
+      <tpNF>1</tpNF>
+      <idDest>1</idDest>
+      <tpEmis>1</tpEmis>
+    </ide>
+    <emit>
+      <CNPJ>11111111000111</CNPJ>
+      <xNome>EMPRESA EXEMPLO LTDA</xNome>
+    </emit>
+    <dest>
+      <CPF>00000000000</CPF>
+      <xNome>CONSUMIDOR FINAL</xNome>
+    </dest>
+    <total>
+      <ICMSTot>
+        <vBC>50.00</vBC>
+        <vICMS>0.00</vICMS>
+        <vNF>50.00</vNF>
+      </ICMSTot>
+    </total>
+  </infNFe>
+  <infNFeSupl>
+    <qrCode>https://www.homologacao.nfce.fazenda.sp.gov.br/consulta?chNFe=35200611111111000111650010000000002000000020&amp;nVersao=100&amp;tpAmb=2&amp;dhEmi=...&amp;vNF=50.00&amp;vICMS=0.00&amp;digVal=...</qrCode>
+    <urlChave>https://www.homologacao.nfce.fazenda.sp.gov.br/consulta</urlChave>
+  </infNFeSupl>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFCe_PL009</verAplic>
+      <chNFe>35200611111111000111650010000000002000000020</chNFe>
+      <dhRecbto>2020-06-01T11:00:05-03:00</dhRecbto>
+      <nProt>135200000000002</nProt>
+      <digVal>AAAA+BBBB/CCCC</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NFC-e</xMotivo>
+    </infProt>
+  </protNFe>
+</NFe>

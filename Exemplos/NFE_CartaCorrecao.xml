@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<procEventoNFe versao="1.00" xmlns="http://www.portalfiscal.inf.br/nfe">
+  <envEvento versao="1.00">
+    <idLote>1</idLote>
+    <evento versao="1.00">
+      <infEvento Id="ID1101103520061111111100011155001000000001100000001001">
+        <cOrgao>35</cOrgao>
+        <tpAmb>1</tpAmb>
+        <CNPJ>11111111000111</CNPJ>
+        <chNFe>35200611111111000111550010000000011000000010</chNFe>
+        <dhEvento>2020-06-03T09:00:00-03:00</dhEvento>
+        <tpEvento>110110</tpEvento>
+        <nSeqEvento>1</nSeqEvento>
+        <verEvento>1.00</verEvento>
+        <detEvento versao="1.00">
+          <descEvento>Carta de Correcao</descEvento>
+          <xCorrecao>Correcao de observacao</xCorrecao>
+          <xCondUso>A Carta de Correcao e disciplinada pelo paragrafo 1o-A do art. 7o do Convenio S/N, de 15 de dezembro de 1970 e pode ser utilizada para regularizacao de erro ocorrido na emissao de documento fiscal.</xCondUso>
+        </detEvento>
+      </infEvento>
+    </evento>
+  </envEvento>
+  <retEnvEvento versao="1.00">
+    <idLote>1</idLote>
+    <tpAmb>1</tpAmb>
+    <verAplic>SP_NFE_PL009</verAplic>
+    <cOrgao>35</cOrgao>
+    <cStat>128</cStat>
+    <xMotivo>Lote de Evento Processado</xMotivo>
+    <retEvento versao="1.00">
+      <infEvento Id="ID110110135200000000001">
+        <tpAmb>1</tpAmb>
+        <verAplic>SP_NFE_PL009</verAplic>
+        <cOrgao>35</cOrgao>
+        <cStat>135</cStat>
+        <xMotivo>Evento registrado e vinculado a NF-e</xMotivo>
+        <chNFe>35200611111111000111550010000000011000000010</chNFe>
+        <tpEvento>110110</tpEvento>
+        <xEvento>CARTA DE CORRECAO</xEvento>
+        <nSeqEvento>1</nSeqEvento>
+      </infEvento>
+    </retEvento>
+  </retEnvEvento>
+</procEventoNFe>

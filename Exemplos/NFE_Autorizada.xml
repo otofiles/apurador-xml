@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+  <infNFe Id="NFe35200611111111000111550010000000011000000010" versao="4.00">
+    <ide>
+      <cUF>35</cUF>
+      <cNF>00000010</cNF>
+      <natOp>VENDA</natOp>
+      <mod>55</mod>
+      <serie>1</serie>
+      <nNF>10</nNF>
+      <dhEmi>2020-06-01T10:00:00-03:00</dhEmi>
+      <tpNF>1</tpNF>
+      <idDest>1</idDest>
+      <tpEmis>1</tpEmis>
+    </ide>
+    <emit>
+      <CNPJ>11111111000111</CNPJ>
+      <xNome>EMPRESA EXEMPLO LTDA</xNome>
+    </emit>
+    <dest>
+      <CNPJ>22222222000122</CNPJ>
+      <xNome>CLIENTE EXEMPLO LTDA</xNome>
+    </dest>
+    <total>
+      <ICMSTot>
+        <vBC>100.00</vBC>
+        <vICMS>18.00</vICMS>
+        <vNF>100.00</vNF>
+      </ICMSTot>
+    </total>
+  </infNFe>
+  <protNFe versao="4.00">
+    <infProt>
+      <tpAmb>1</tpAmb>
+      <verAplic>SP_NFE_PL009</verAplic>
+      <chNFe>35200611111111000111550010000000011000000010</chNFe>
+      <dhRecbto>2020-06-01T10:00:05-03:00</dhRecbto>
+      <nProt>135200000000001</nProt>
+      <digVal>B0D7F2CzBwMlyNFxMCH3M9Uz5Dk=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso da NF-e</xMotivo>
+    </infProt>
+  </protNFe>
+</NFe>
